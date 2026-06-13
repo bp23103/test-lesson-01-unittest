@@ -30,7 +30,10 @@ import static org.junit.jupiter.api.Assertions.*;
 class CalcTest {
 
     // ↓↓↓ ここに手で打つ ↓↓↓
-
-
+@Test
+    void add_2たす3は5になる() {
+        Calc calc = new Calc();
+        assertEquals(5, calc.add(2, 3));
+    }
     // ↑↑↑ ここまで ↑↑↑
 }

@@ -36,10 +36,10 @@ class VendingMachineTest {
     @Test
     void お釣りが正しく出る() {                 // ケース2：穴埋め
         VendingMachine vm = new VendingMachine();
-        vm.insert(_____);                      // ★仕様書No.2「いくら入れる？」
+        vm.insert(200);                      // ★仕様書No.2「いくら入れる？」
         Drink d = vm.buy("水");
         assertEquals("水", d.name());
-        assertEquals(_____, vm.change());      // ★仕様書No.2「お釣りはいくら？」
+        assertEquals(50, vm.change());      // ★仕様書No.2「お釣りはいくら？」
     }
 
     // ───────── 境界値 ─────────
@@ -48,14 +48,14 @@ class VendingMachineTest {
     void 境界のすぐ下では買えない() {            // ケース5：穴埋め
         VendingMachine vm = new VendingMachine();
         vm.insert(140);                        // 水(150円)に1円足りない
-        assertEquals(_____, vm.canBuy("水"));  // ★買える？ true / false で
+        assertEquals(false, vm.canBuy("水"));  // ★買える？ true / false で
     }
 
     @Test
     void 境界の上側なら買える() {                // ケース6：穴埋め
         VendingMachine vm = new VendingMachine();
         vm.insert(150);                        // ちょうど150円
-        assertEquals(_____, vm.canBuy("水"));  // ★買える？ true / false で
+        assertEquals(true, vm.canBuy("水"));  // ★買える？ true / false で
     }
 
     // ───────── 異常系（仕様書 No.3・4）─────────
